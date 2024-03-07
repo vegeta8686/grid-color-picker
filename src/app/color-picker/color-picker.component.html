@@ -1,0 +1,15 @@
+<!-- start :- showing the color grid  -->
+<div class="color-grid"
+[attr.aria-disabled]="isDisabled ? 'true' : 'false'"
+  (keydown)="handleKeyDown($event)">
+  <div
+    *ngFor="let color of colors"
+    [style.background]="color"
+    [class.selected]="color === selectedColor"
+    tabindex="0"
+    (click)="selectColor(color)"
+    [attr.aria-selected]="color === selectedColor ? 'true' : 'false'"
+    [attr.aria-disabled]="isDisabled ? 'true' : 'false'"
+  ></div>
+</div>
+<!-- end :- showing the color grid  -->
